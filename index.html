@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- This is a navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav" id="globalnav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="RegisterUser">Register New Teacher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="DeleteUser">Delete a Teacher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="EditUser">Edit a Teacher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="PrintUsers" onclick="PrintUsers()">Print All Registered Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="SearchUser"">Search a Teacher</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>        
+        
+        <div class="container mt-5 custom-background">
+            <br><br><h2 class="text-center mb-4">Universidad La Salle</h2>
+            <h2 class="text-center mb-4">Teachers file</h2><br>
+        </div>
+
+
+        <div class="container"> <!--Register User-->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div id = "RegisterUser">
+                        <form id="form" action="/action_page.php" target="_self">
+                            <div id="animations-container">
+                                <div id="hideShowContainer" class="p-4">
+                                    <div id="StudyLevel" class="mb-4">
+                                        <h1 class="text-center">Register a new teacher</h1><br>
+                                        <h3>Study Level</h3>
+                                        <label for="StudyLevel">Highest study level acquired</label><br>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="StudyLevel" value="HighSchoolDiploma" id="highschool">
+                                            <label class="form-check-label" for="highschool">High School Diploma</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="StudyLevel" value="Degree" id="degree">
+                                            <label class="form-check-label" for="degree">Degree</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="StudyLevel" value="Masters" id="masters">
+                                            <label class="form-check-label" for="masters">Masters</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3>Area of Speciality</h3>
+                                    <label for="area">Area of Speciality</label><br>
+                                    <div class="mb-4" id = "area">
+                                        <div class="form-check">
+                                            <input type="radio" id="area1" name="area" class="form-check-input" value="Maths">
+                                            <label class="form-check-label" for="area1">Maths</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input type="radio" id="area2" name="area" class="form-check-input" value="Literature">
+                                            <label class="form-check-label" for="area2">Literature</label>
+                                        </div>
+                                        
+                                        <div class="form-check">
+                                            <input type="radio" id="area3" name="area" class="form-check-input" value="Science">
+                                            <label class="form-check-label" for="area3">Science</label>
+                                        </div>
+                                        <br>
+                                    </div>
+
+        
+                                    <h3>Shift</h3>
+                                    <div class="mb-4" id = "shift">
+                                        <label for = "shift">Select Shift</label><br>
+                                        <div class = "form-check">
+                                            <input type = "radio" id = "morningshift" name = "shift" class="form-check-input" value="Morning">
+                                            <label class="form-check-label" for="morningshift">Morning</label>
+                                        </div>
+                                        <div class = "form-check">
+                                            <input type = "radio" id = "eveningshift" name = "shift" class="form-check-input" value="Evening">
+                                            <label class="form-check-label" for="eveningshift">Evening</label>
+                                        </div>
+                                    </div>
+                        
+                                    <br><h3>Personal Data</h3>
+                                    <div class="mb-4">
+                                        <label for="name">Name</label><br>
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="John...">
+                                    </div>
+                
+                
+                                    <div class="mb-4">
+                                        <label for="Surname1">First Surname</label><br>
+                                        <input type="text" id="surname1" name="surname1" class="form-control" placeholder="Appleseed...">
+                                    </div>
+                
+                                    <div class="mb-4">
+                                        <label for="Surname2">Second Surname</label><br>
+                                        <input type="text" id="surname2" name="surname2" class="form-control" placeholder="Kennedy...">
+                                    </div>
+                
+                                    <div class="mb-4">
+                                        <label for="birthday">Select your birthday</label><br>
+                                        <input type="date" id="birthday" name="birthday" class="form-control">
+                                    </div>
+                
+                                    <div class="mb-4">
+                                        <label for="age">Age</label><br>
+                                        <input type="number" id="age" name="age" class="form-control" placeholder="123...">
+                                    </div>
+                
+                                    <div id = "gender" class = "mb-4">
+                                        <label for ="gender">Sex</label><br>
+                                        <div class = "form-check">
+                                            <input class="form-check-input" type="radio" name="gender" value="Male" id="male">
+                                            <label class="form-check-label" for="male">Male</label>
+                                        </div>
+                                        <div class = "form-check">
+                                            <input class="form-check-input" type="radio" name="gender" value="Female" id="female">
+                                            <label class="form-check-label" for="female">Female</label>
+                                        </div>
+                                    </div>
+        
+                                    <div id = "maritalStatus" class = "mb-4">
+                                        <label for = "maritalStatus">Select Marital Status</label><br>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="maritalStatus" value="Married" id="married">
+                                            <label class="form-check-label" for="married">Married</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="maritalStatus" value="Widowed" id="widowed">
+                                            <label class="form-check-label" for="widowed">Widow</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="maritalStatus" value="Single" id="single">
+                                            <label class="form-check-label" for="single">Single</label>
+                                        </div>
+                                    </div>
+        
+                                    <div id = "keyid" class = "mb-4">
+                                        <label for = "keyid">Type In a Unique Key</label><br>
+                                        <input type="text" id="keyidD" name="keyid" class="form-control" placeholder="123aBc$...">
+                                    </div>
+        
+                                    <div id="SubmitButton" class="mb-4">
+                                        <div class = "d-flex justify-content-center">
+                                            <input type="button" id="submitbtnregister" value="Register Teacher" class="btn btn-success" onclick="SendData(); ">
+                                        </div>
+                                    </div>
+                
+                                    <div id="ResetButton" class="mb-4">
+                                        <div class = "d-flex justify-content-center">
+                                            <input type="reset" value="Reset Form" class="btn btn-danger" onclick="ResetForm()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container"> <!--Delete User-->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div id = "DeleteUser">
+                        <form id="formdelete" action="/action_page.php" target="_self">
+                            <div id="animations-container">
+                                <div id="hideShowContainer" class="p-4">
+                                    <h1 class = "text-center">Delete a Teacher</h1><br>
+                                    <p>Search by KeyID:</p>
+                                    <input type="text" id="fieldforsearchinput" name="fieldforsearchinput" class="form-control" placeholder="123aBc$..."><br>
+                                    <div id="searchdeleteBtn" class="mb-4">
+                                        <div class = "d-flex justify-content-center">
+                                            <input type="button" id="searchDeletetBtn" value="Search and Delete" onclick="DeleteUser()" class = "btn btn-danger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container"> <!--Edit User-->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div id = "EditUser">
+                        <div id = divformeditsearch>
+                            <form id="formeditSearch" action="/action_page.php" target="_self">
+                                <div id="animations-container">
+                                    <div id="hideShowContainer" class="p-4">
+                                        <h1 class = "text-center">Edit a Teacher</h1><br>
+                                        <p>Search and Edit by KeyID:</p>
+                                        <input type="text" id="keyidDSearch" name="fieldforsearchinput" class="form-control" placeholder="123aBc$..."><br>
+                                        <div id="searchediteBtndiv" class="mb-4">
+                                            <div class = "d-flex justify-content-center">
+                                                <input type="button" id="searcheditbtn" value="Search and Edit" onclick="SearchEdit()" class = "btn btn-primary">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form> 
+                        </div>
+                        <div id="divformedit">
+                            <form id="formEdit">
+                                <div id="animations-container">
+                                    <div id="hideShowContainer" class="p-4">
+                                        <div id="StudyLevelEdit" class="mb-4">
+                                            <h1 class="text-center">Edit a Teacher</h1><br>
+                                            <h3>Study Level</h3>
+                                            <label for="StudyLevelEdit">Highest Study Level Acquired</label><br>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="StudyLevelEdit" value="HighSchoolDiploma" id="highschoolEdit">
+                                                <label class="form-check-label" for="highschoolEdit">High School Diploma</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="StudyLevelEdit" value="Degree" id="degreeEdit">
+                                                <label class="form-check-label" for="degreeEdit">Degree</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="StudyLevelEdit" value="Masters" id="mastersEdit">
+                                                <label class="form-check-label" for="mastersEdit">Masters</label>
+                                            </div>
+                                        </div>
+                                        <div class ="mb-4" id="areaofspecialityEdit">
+                                            <h3>Area of Speciality</h3>
+                                            <label for="areaEdit">Area of Speciality</label><br>
+                                            <div class="mb-4" id = "areaEdit">
+                                                <div class="form-check">
+                                                    <input type="radio" id="area1Edit" name="areaEdit" class="form-check-input" value="Maths">
+                                                    <label class="form-check-label" for="area1Edit">Maths</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input type="radio" id="area2Edit" name="areaEdit" class="form-check-input" value="Literature">
+                                                    <label class="form-check-label" for="area2Edit">Literature</label>
+                                                </div>
+                                                
+                                                <div class="form-check">
+                                                    <input type="radio" id="area3Edit" name="areaEdit" class="form-check-input" value="Science">
+                                                    <label class="form-check-label" for="area3Edit">Science</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4" id="shiftEdit">
+                                            <h3>Shift</h3>
+                                            <label for = "shiftEdit">Select Shift</label><br>
+                                            <div class="mb-4">
+                                                <div class = "form-check">
+                                                    <input type = "radio" id = "morningshiftEdit" name = "shiftEdit" class="form-check-input" value="Morning">
+                                                    <label class="form-check-label" for="morningshiftEdit">Morning</label>
+                                                </div>
+                                                <div class = "form-check">
+                                                    <input type = "radio" id = "eveningshiftEdit" name = "shiftEdit" class="form-check-input" value="Evening">
+                                                    <label class="form-check-label" for="eveningshiftEdit">Evening</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4" id="personaldataEdit">
+                                            <br><h3>Personal Data</h3>
+                                            <div class="mb-4">
+                                                <label for="nameEdit">Name</label><br>
+                                                <input type="text" id="nameEdit" name="name" class="form-control" placeholder="John...">
+                                            </div>
+                        
+                                            <div class="mb-4">
+                                                <label for="surname1Edit">First Surname</label><br>
+                                                <input type="text" id="surname1Edit" name="surname1" class="form-control" placeholder="Appleseed...">
+                                            </div>
+                        
+                                            <div class="mb-4">
+                                                <label for="surname2Edit">Second Surname</label><br>
+                                                <input type="text" id="surname2Edit" name="surname2" class="form-control" placeholder="Kennedy...">
+                                            </div>
+                        
+                                            <div class="mb-4">
+                                                <label for="birthdayEdit">Select your birthday</label><br>
+                                                <input type="date" id="birthdayEdit" name="birthday" class="form-control">
+                                            </div>
+                        
+                                            <div class="mb-4">
+                                                <label for="ageEdit">Age</label><br>
+                                                <input type="number" id="ageEdit" name="age" class="form-control" placeholder="123...">
+                                            </div>
+                        
+                                            <div id = "genderEdit" class = "mb-4">
+                                                <label for ="genderEdit">Sex</label><br>
+                                                <div class = "form-check">
+                                                    <input class="form-check-input" type="radio" name="genderEdit" value="Male" id="maleEdit">
+                                                    <label class="form-check-label" for="maleEdit">Male</label>
+                                                </div>
+                                                <div class = "form-check">
+                                                    <input class="form-check-input" type="radio" name="genderEdit" value="Female" id="femaleEdit">
+                                                    <label class="form-check-label" for="femaleEdit">Female</label>
+                                                </div>
+                                            </div>
+                
+                                            <div id = "maritalStatusEdit" class = "mb-4">
+                                                <label for = "maritalStatusEdit">Marital status</label><br>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="maritalStatusEdit" value="Married" id="marriedEdit">
+                                                    <label class="form-check-label" for="marriedEdit">Married</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="maritalStatusEdit" value="Widowed" id="widowedEdit">
+                                                    <label class="form-check-label" for="widowedEdit">Widow</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="maritalStatusEdit" value="Single" id="singleEdit">
+                                                    <label class="form-check-label" for="singleEdit">Single</label>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div id = "keyidEdit" class = "mb-4">
+                                            <label for = "keyidDEdit">Type In a Unique Key</label><br>
+                                            <input type="text" id="keyidDEdit" name="keyid" class="form-control" placeholder="123aBc$...">
+                                        </div>
+            
+                                        <div id="SubmitButtonEdit" class="mb-4">
+                                            <div class = "d-flex justify-content-center">
+                                                <input type="button" id="submitbtnedit" value="Submit Changes" class="btn btn-success" onclick="UpdateData();">
+                                            </div>
+                                        </div>
+                    
+                                        <div id="ResetButton" class="mb-4">
+                                            <div class = "d-flex justify-content-center">
+                                                <input type="reset" value="Reset Form" class="btn btn-danger" onclick="ResetForm()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id = "PrintUsers"> <!--Print All Users-->
+            <form id="formprint" action="/action_page.php" target="_self">
+                <div id="animations-container">
+                    <div id="hideShowContainer" class="p-4">
+                        <h1 class = "text-center">All Teachers</h1><br>
+                        <table id = "TableAllUsers" class = "TableUsers"></table>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container"> <!--Search User-->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div id = "SearchUser">
+                        <form id="formsearcg" action="/action_page.php" target="_self">
+                            <div id="animations-container">
+                                <div id="hideShowContainer" class="p-4">
+                                    <h1 class = "text-center">Search a Teacher</h1><br>
+                                    <p>Search by KeyID:</p>
+                                    <input type="text" id="searchallinput" name="searchallinputname" class="form-control" placeholder="123aBc$..."><br>
+                                    <div id="searchbtndiv" class="mb-4">
+                                        <div class = "d-flex justify-content-center">
+                                            <input type="button" id="searchbtnprintall" value="Search" onclick="SearchUser()" class = "btn btn-primary">
+                                        </div>
+                                        <br><div id="searchResults"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
