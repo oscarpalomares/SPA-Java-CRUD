@@ -67,7 +67,7 @@ function ShowTab(tabId) {
     tabs.forEach(function(id) {
         document.getElementById(id).style.display = "none";
     });
-    //Shos the selected tab
+    //Shows the selected tab
     document.getElementById(tabId).style.display = "block";
 }
 
@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
     ShowTab("RegisterUser");
 
     document.getElementById("globalnav").addEventListener("click", function(e) {
-        // Evita el comportamiento por defecto de los enlaces.
         e.preventDefault();
 
         //Gets the ID of the selected element.
